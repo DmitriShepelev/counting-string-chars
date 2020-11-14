@@ -11,8 +11,24 @@ namespace CountingStringChars
         /// <returns>A number of characters in a string.</returns>
         public static int GetCharCount(string str)
         {
-            // TODO #1. Analyze the implementation of "GetCharCountRecursive" methods, and implement the method using the "for" loop statement.
-            throw new NotImplementedException();
+            // #1. Analyze the implementation of "GetCharCountRecursive" methods, and implement the method using the "for" loop statement.
+            if (str is null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (str.Length <= 0)
+            {
+                return 0;
+            }
+
+            var count = 1;
+            for (int i = 1; i <= str.Length; i++)
+            {
+                count = i;
+            }
+
+            return count;
         }
 
         /// <summary>
@@ -22,8 +38,27 @@ namespace CountingStringChars
         /// <returns>A number of upper characters in a string.</returns>
         public static int GetUpperCharCount(string str)
         {
-            // TODO #2. Analyze the implementation of "GetUpperCharCountRecursive" methods, and implement the method using the "for" loop statement.
-            throw new NotImplementedException();
+            // #2. Analyze the implementation of "GetUpperCharCountRecursive" methods, and implement the method using the "for" loop statement.
+            if (str is null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (str.Length <= 0)
+            {
+                return 0;
+            }
+
+            var count = 0;
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (char.IsUpper(str[i]))
+                {
+                    count++;
+                }
+            }
+
+            return count;
         }
 
         /// <summary>

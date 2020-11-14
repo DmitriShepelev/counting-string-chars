@@ -11,8 +11,30 @@ namespace CountingStringChars
         /// <returns>A number of white space characters in a string.</returns>
         public static int GetSpaceCount(string str)
         {
-            // TODO #3. Analyze the implementation of "GetSpaceCountRecursive" method, and implement the method using the "while" loop statement.
-            throw new NotImplementedException();
+            // #3. Analyze the implementation of "GetSpaceCountRecursive" method, and implement the method using the "while" loop statement.
+            if (str is null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (string.IsNullOrEmpty(str))
+            {
+                return 0;
+            }
+
+            var count = 0;
+            var index = 0;
+            while (index < str.Length)
+            {
+                if (char.IsWhiteSpace(str[index]))
+                {
+                    count++;
+                }
+
+                index++;
+            }
+
+            return count;
         }
 
         /// <summary>
@@ -22,8 +44,30 @@ namespace CountingStringChars
         /// <returns>A number of punctuation marks in a string.</returns>
         public static int GetPunctuationCount(string str)
         {
-            // TODO #4. Analyze the implementation of "GetSeparatorCount" method, and implement the method using the "while" loop statement.
-            throw new NotImplementedException();
+            // #4. Analyze the implementation of "GetSeparatorCount" method, and implement the method using the "while" loop statement.
+            if (str is null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (string.IsNullOrEmpty(str))
+            {
+                return 0;
+            }
+
+            var count = 0;
+            var index = 0;
+            while (index < str.Length)
+            {
+                if (char.IsPunctuation(str[index]))
+                {
+                    count++;
+                }
+
+                index++;
+            }
+
+            return count;
         }
 
         /// <summary>
